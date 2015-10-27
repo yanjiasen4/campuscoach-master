@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+	
+		<!--C3P0配置 -->
+	
+        <property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.timeout">120</property>
+        <property name="automaticTestTable">Test</property>
+        <property name="hibernate.c3p0.max_statements">100</property>
+        <property name="hibernate.c3p0.idle_test_period">120</property>
+        <property name="hibernate.c3p0.acquire_increment">1</property>
+        <property name="c3p0.testConnectionOnCheckout">true</property>
+        <property name="c3p0.idleConnectionTestPeriod">18000</property>
+        <property name="c3p0.maxIdleTime">25000</property>
+        <property name="c3p0.idle_test_period">120</property>
+		
+	
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/campuscoach?useUnicode=true&amp;characterEncoding=UTF8</property>
+		
+		<!--  
+		<property name="connection.url">
+			jdbc:mysql://w.rdc.sae.sina.com.cn:3307/app_xiaoyuanjiaolian
+		</property>  
+		-->
+		<!-- 
+		<property name="connection.username">xwlmwx1m1j</property>
+		<property name="connection.password">0j1424iix2z2023l31x513i254xhllk5w33x1w5w</property>  --> 
+  
+		<property name="connection.username">yanjiasen4</property>
+		<property name="connection.password">asdffdsa</property>
+
+		<!-- JDBC connection pool (use the built-in) -->
+		<!-- <property name="connection.pool_size">1</property>-->
+		
+
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<property name="current_session_context_class">thread</property>
+
+		<!-- Disable the second-level cache -->
+		<!--<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>-->
+
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- Drop and re-create the database schema on startup -->
+		<property name="hbm2ddl.auto">update</property>
+
+		<mapping resource="com/entity/Coach.hbm.xml" />
+		<mapping resource="com/entity/Course.hbm.xml" />
+		<mapping resource="com/entity/CourseSignUp.hbm.xml" />
+		<mapping resource="com/entity/Learner.hbm.xml" />
+		<mapping resource="com/entity/Reservation.hbm.xml" />
+		<mapping resource="com/entity/ReservationReceive.hbm.xml" />
+	</session-factory>
+
+</hibernate-configuration>

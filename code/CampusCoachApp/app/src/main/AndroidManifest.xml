@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.campuscoach.campuscoachapp" >
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/TitleBarStyle" >
+        <activity
+            android:name="com.campuscoach.activity.ChooseSportActivity"
+            android:label="@string/title_activity_choose_sport" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.ReservationActivity"
+            android:label="@string/title_activity_requirement" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.TrainingClassActivity"
+            android:label="@string/title_activity_training_class" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.BookCoachActivity"
+            android:label="@string/title_activity_book_coach" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.PersonalInfoActivity"
+            android:label="@string/title_activity_personal_info" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.ClassDetailActivity"
+            android:label="@string/title_activity_class_detail" >
+        </activity>
+        <activity android:name="com.soundcloud.android.crop.CropImageActivity" />
+        <activity
+            android:name="com.campuscoach.activity.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.RegActivity"
+            android:label="@string/title_activity_reg" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.AboutUsActivity"
+            android:label="@string/title_activity_about_us" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.CoachInfoActivity"
+            android:label="@string/title_activity_coach_info" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.UserClassActivity"
+            android:label="@string/title_activity_user_class" >
+        </activity>
+        <activity
+            android:name="com.campuscoach.activity.UserReservationActivity"
+            android:label="@string/title_activity_user_reservation" >
+        </activity>
+    </application>
+
+</manifest>

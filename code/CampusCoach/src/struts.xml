@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+<struts>
+	
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<include file="struts-default.xml" />
+	
+	<package name="wechat" extends="struts-default">
+		
+		<interceptors>  
+            <interceptor name="authority" class="com.interceptor.LoginCheckInterceptor">  
+            </interceptor>  
+            <interceptor name="coachcheck" class="com.interceptor.CoachCheckInterceptor">  
+            </interceptor>
+            <!-- 拦截器栈 -->  
+            <interceptor-stack name="logincheck">  
+                <interceptor-ref name="defaultStack" />  
+                <interceptor-ref name="authority">
+                	<param name="reloginResult">login</param>
+                </interceptor-ref>
+            </interceptor-stack>  
+   
+            <!-- 拦截器栈 -->  
+            <interceptor-stack name="coachcheck">  
+                <interceptor-ref name="defaultStack" />
+                <interceptor-ref name="authority"/>
+                <interceptor-ref name="coachcheck">
+                	<param name="isNotCoach">coach-require</param>
+                </interceptor-ref>
+            </interceptor-stack>  
+        </interceptors>  
+	
+		 <global-results>  
+            <result name="login" type="redirect">/info/tologin.html</result>
+            <result name="coach-require">info/coach-require.html</result>
+            <result name="error-password">login.jsp?errNo=2</result> 
+            <result name="user-not-exist">login.jsp?errNo=3</result>
+        </global-results>  
+	
+		<action name="showcourses" class="showCoursesAction">
+			<result name="input">/</result>
+			<result name="success">/index.jsp</result>
+			<result name="flogin">/index.jsp?login=1</result>
+			<result name="error">info/failed.html</result>
+		</action>
+		<action name="courseform" class="createCourseAction">
+			<result name="input">/</result>
+			<result name="success" type="redirect">info/success.html</result>
+			<result name="error">info/failed.html</result>
+			<interceptor-ref name="coachcheck" /> 
+		</action>
+		<action name="reservationform" class="reservationAction">
+			<result name='input'>/</result>
+			<result name="success" type="redirect">info/success.html</result>
+			<result name="error">info/failed.html</result>
+			<interceptor-ref name="logincheck"/> 
+		</action>
+		<action name="signup" class="signUpAction">
+			<result name="input">/</result>
+			<result name="success" type="redirect">info/success.html</result>
+			<result name="error" type="redirect">info/signupfailed.html</result>
+			<result name="info" type="redirect">info/failed.html</result>
+			<interceptor-ref name="logincheck" /> 
+		</action>
+		<action name="showusercourses" class="showUserCoursesAction">
+			<result name="input">/</result>
+			<result name="success">/center.jsp</result>
+			<result name="error" type="redirect">info/failed.html</result>
+			<interceptor-ref name="logincheck" /> 
+		</action>
+		<action name="becomecoach" class="becomeCoachAction">
+			<result name="input">/</result>
+			<result name="success" type="redirect">info/success.html</result>
+			<result name="error" type="redirect">/info/failed-coach.html</result>
+			<interceptor-ref name="logincheck" />  
+		</action>
+		<action name="loginform" class="loginAction">
+			<result name="input">/</result>
+			<result name="success" type="redirect">showcourses</result>
+			<result name="error" type="redirect">info/failed.html</result>
+		</action>
+		<action name="registerform" class="regAction">
+			<result name="input">/</result>
+			<result name="success" type="redirect">info/success.html</result>
+			<result name="error">register.jsp?errNo=1</result>
+		</action>
+		<action name="logout" class="logOutAction">
+			<result name="input">/</result>
+     		<result name="success" type="redirect">index.html</result>
+			<result name="error">/info/failed.html</result>
+            <interceptor-ref name="logincheck"/>
+		</action>
+		<action name="showcoach" class="showCoachAction">
+			<result name="input">/</result>
+			<result name="success">coach-info.jsp</result>
+			<result name="error">info/failed.html</result>
+		</action>
+		<action name="showreservation" class="showReservationAction">
+			<result name="input">/</result>
+			<result name="success">reservation.jsp</result>
+			<result name="error">info/failed.html</result>
+		</action>
+		<action name="receive" class="receiveAction">
+			<result name="input">/</result>
+			<result name="success" type="redirect">info/success.html</result>
+			<result name="error" type="redirect">info/receivefailed.html</result>
+			<interceptor-ref name="coachcheck"/> 
+		</action>
+		<action name="showuserreservation" class="showUserReservationAction">
+			<result name="input">/</result>
+			<result name="success">center-res.jsp</result>
+			<result name="error">info/failed.html</result>
+			<interceptor-ref name="logincheck"/>
+		</action>
+		<action name="showcoachcourses" class="showCoachCourseAction">
+			<result name="input">/</result>
+			<result name="success">center-course.jsp</result>
+			<result name="error">info/failed.html</result>
+			<interceptor-ref name="coachcheck"/>
+		</action>	
+		<action name="uploadavatar" class="uploadAvatarAction">
+			<result name="input">user-setting.jsp?success=1</result>
+			<result name="success" type="redirect">user-setting.jsp</result>
+			<result name="error" type="redirect">info/failed.html</result>
+		</action>
+		<action name="updatelearnerinfo" class="updateLearnerInfoAction">
+			<result name="input">user-setting.jsp</result>
+			<result name="success" type="redirect">user-setting.jsp?success=1</result>
+			<result name="error" type="redirect">info/failed.html</result>
+		</action>
+		
+	</package>
+	
+	<package name="app" extends="struts-default">
+		<action name="app-showcourses" class="showCoursesAction" method="appexecute"></action>
+		<action name="app-showcoaches" class="showCoachAction" method="appexecute"></action>
+		<action name="app-showreservation" class="showReservationAction" method="appexecute"></action>
+		<action name="app-showusercourse" class="showUserCoursesAction" method="appexecute"></action>
+		<action name="app-showuserreservation" class="showUserReservationAction" method="appexecute"></action>
+		<action name="app-login" class="loginAction" method="appexecute"></action>
+		<action name="app-register" class="regAction" method="appexecute"></action>
+		<action name="app-createcourse" class="createCourseAction" method="appexecute"></action>
+		<action name="app-signup" class="signUpAction" method="appexecute"></action>
+		<action name="app-becomecoach" class="becomeCoachAction" method="appexecute"></action>
+		<action name="app-reservation" class="reservationAction" method="appexecute"></action>
+		<action name="app-receive" class="receiveAction" method="appexecute"></action>
+		<action name="app-updatelearnerinfo" class="updateLearnerInfoAction" method="appexecute"></action>
+	</package>	  
+
+</struts>

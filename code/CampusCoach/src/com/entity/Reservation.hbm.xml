@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="com.entity">    
+    
+    <class name="Reservation" table="reservation"> 
+
+    <id name="reservationID" column="reservationID">
+    	<generator class="native"></generator>
+    </id>
+    <property name="learnerID" column="learnerID"></property> 
+    <property name="time" column="time"></property> 
+    <property name="place" column="place"></property> 
+    <property name="introduction" column="introduction"></property> 
+    <property name="stateFlag" column="stateFlag"></property> 
+    <property name="maxNum" column="maxNum"></property>
+    <property name="sportsName" column="sportsName"></property>
+    <property name="price" column="price"></property>
+    <property name="learnerPhone" column="learnerPhone"></property>
+    <property name="reservationName" column="reservationName"></property>
+    </class>
+    
+</hibernate-mapping>

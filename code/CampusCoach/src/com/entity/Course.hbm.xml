@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="com.entity">    
+    
+    <class name="Course" table="course"> 
+	
+    <id name="courseID" column="courseID">
+    	<generator class="native"></generator>
+    </id>
+    <property name="coachID" column="coachID"></property> 
+    <property name="coachName" column="coachName"></property> 
+    <property name="sportsName" column="sportsName"></property> 
+    <property name="time" column="time"></property> 
+    <property name="place" column="place"></property> 
+    <property name="introduction" column="introduction"></property> 
+    <property name="stateFlag" column="stateFlag"></property> 
+    <property name="maxNum" column="maxNum"></property> 
+    <property name="price" column="price"></property> 
+    <property name="enrollNum" column="enrollNum"></property> 
+    <property name="phoneNumber" column="phoneNumber"></property> 
+    </class>
+    
+</hibernate-mapping>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+	       http://www.springframework.org/schema/beans  
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+           http://www.springframework.org/schema/context  
+           http://www.springframework.org/schema/context/spring-context-3.0.xsd  
+           http://www.springframework.org/schema/aop  
+           http://www.springframework.org/schema/aop/spring-aop-3.0.xsd  
+           http://www.springframework.org/schema/tx   
+           http://www.springframework.org/schema/tx/spring-tx-3.0.xsd"> 
+ 	
+	<!-- Action 层配置 -->
+     <bean id="createCourseAction" class="com.action.CreateCourseAction">
+    	<property name="courseManager" ref="courseManager"></property>
+	</bean> 
+	<bean id="showCoursesAction" class="com.action.ShowCoursesAction">
+		<property name="courseManager" ref="courseManager"></property>
+		<property name="learnerManager" ref="learnerManager"></property>
+	</bean>
+	<bean id="showUserCoursesAction" class="com.action.ShowUserCoursesAction">
+		<property name="courseManager" ref="courseManager"></property>
+	</bean>
+	<bean id="signUpAction" class="com.action.SignUpAction">
+		<property name="courseManager" ref="courseManager"></property>
+	</bean>
+	<bean id="reservationAction" class="com.action.RegRequireAction">
+		<property name="reservationManager" ref="reservationManager"></property>
+	</bean>
+	<bean id="becomeCoachAction" class="com.action.BecomeCoachAction">
+		<property name="coachManager" ref="coachManager"></property>
+		<property name="learnerManager" ref="learnerManager"></property>
+	</bean>
+	<bean id="loginAction" class="com.action.LoginAction">
+		<property name="learnerManager" ref="learnerManager"></property>
+		<property name="coachManager" ref="coachManager"></property>
+	</bean>
+	<bean id="regAction" class="com.action.RegisterAction">
+		<property name="learnerManager" ref="learnerManager"></property>
+	</bean>
+	<bean id="logOutAction" class="com.action.LogOutAction"></bean>
+	<bean id="showCoachAction" class="com.action.ShowCoachAction">
+		<property name="coachManager" ref="coachManager"></property>
+	</bean>
+	<bean id="showReservationAction" class="com.action.ShowReservationAction">
+		<property name="reservationManager" ref="reservationManager"></property>
+	</bean>
+	<bean id="receiveAction" class="com.action.ReceiveAction">
+		<property name="reservationManager" ref="reservationManager"></property>
+	</bean>
+	<bean id="showUserReservationAction" class="com.action.ShowUserReservationAction">
+		<property name="reservationManager" ref="reservationManager"></property>
+	</bean>
+	<bean id="showCoachCourseAction" class="com.action.ShowCoachCoursesAction">
+		<property name="courseManager" ref="courseManager"></property>
+	</bean>
+	<bean id="uploadAvatarAction" class="com.action.UploadAvatarAction">
+		<property name="learnerManager" ref="learnerManager"></property>
+		<property name="uploadDir" value="/img"></property>
+	</bean>
+	<bean id="updateLearnerInfoAction" class="com.action.UpdateLearnerInfoAction">
+		<property name="learnerManager" ref="learnerManager"></property>
+	</bean>
+	
+	<!-- Manager 层配置 -->
+ 	<bean id="coachManager" class="com.managerImpl.CoachManagerImpl">
+		<property name="coachDao" ref="coachDao"></property>
+	</bean>
+	<bean id="courseManager" class="com.managerImpl.CourseManagerImpl">
+		<property name="courseDao" ref="courseDao"></property>
+		<property name="courseSignUpDao" ref="courseSignUpDao"></property>
+		<property name="coachDao" ref="coachDao"></property>
+		<property name="learnerDao" ref="learnerDao"></property>
+		<property name="defaultState" value="1"></property>
+	</bean>
+	<bean id="learnerManager" class="com.managerImpl.LearnerManagerImpl">
+		<property name="learnerDao" ref="learnerDao"></property>
+	</bean>
+	<bean id="reservationManager" class="com.managerImpl.ReservationManagerImpl">
+		<property name="reservationDao" ref="reservationDao"></property>
+		<property name="reservationReceiveDao" ref="reservationReceiveDao"></property>
+		<property name="coachDao" ref="coachDao"></property>
+	</bean>
+
+	<!-- Dao 层配置 -->
+	<bean id="coachDao" class="com.daoImpl.CoachDAOImpl">
+		<property name="defaultCoachFlag" value="1"></property>
+	</bean>
+	<bean id="courseDao" class="com.daoImpl.CourseDAOImpl"></bean>
+	<bean id="courseSignUpDao" class="com.daoImpl.CourseSignUpDAOImpl"></bean>
+	<bean id="learnerDao" class="com.daoImpl.LearnerDAOImpl"></bean>
+	<bean id="reservationDao" class="com.daoImpl.ReservationDAOImpl"></bean>
+	<bean id="reservationReceiveDao" class="com.daoImpl.ReservationReceiveDAOImpl"></bean>
+	
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="com.entity">    
+    
+    <class name="CourseSignUp" table="coursesignup"> 
+
+    <composite-id>
+		<key-property name="courseID" column="courseID"></key-property>
+		<key-property name="learnerID" column="learnerID"></key-property>
+	</composite-id> 
+    </class>
+    
+</hibernate-mapping>

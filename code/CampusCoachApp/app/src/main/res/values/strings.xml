@@ -1,0 +1,80 @@
+<resources>
+    <string name="app_name">CampusCoachApp</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="reservation_title1">没有合适的教练或者训练班?</string>
+    <string name="reservation_title2">填写一下需求吧！</string>
+    <string name="register_requirement">登记需求</string>
+    <string name="book_coach">预约教练</string>
+    <string name="training_class">培训班</string>
+    <string name="personal_info">个人信息</string>
+    <string name="commit">提交</string>
+
+    <string name="coach_name">教练姓名：</string>
+    <string name="phone">手机：</string>
+
+    <string name="user_order_title">给你的需求起个名字吧</string>
+    <string name="user_order_sports">运动项目</string>
+    <string name="user_order_price">培训费用</string>
+    <string name="user_order_count">培训次数</string>
+    <string name="user_order_time">培训时间</string>
+    <string name="user_order_place">培训地点</string>
+    <string name="user_order_number_of_learner">参与人数</string>
+    <string name="user_order_phone">联系电话</string>
+    <string name="user_order_remark">备注</string>
+
+    <!--训练班信息-->
+    <string name="training_class_sports">运动项目</string>
+    <string name="training_class_place">培训地点</string>
+    <string name="training_class_price">培训费用</string>
+    <string name="training_class_count">培训次数</string>
+    <string name="training_class_time">培训时间</string>
+    <string name="training_class_phone">联系电话</string>
+    <string name="training_class_detail">详情介绍</string>
+    <string name="training_class_phone_input_hint">请输入你的手机号码</string>
+
+
+    <string name="title_activity_requirement">RequirementActivity</string>
+    <string name="title_activity_training_class">TrainingClassActivity</string>
+    <string name="title_activity_book_coach">BookCoachActivity</string>
+    <string name="title_activity_personal_info">PersonalInfoActivity</string>
+    <string name="title_activity_choose_sport">ChooseSportActivity</string>
+    <string name="title_activity_class_detail">ClassDetailActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_reg">RegActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_user_class">UserClassActivity</string>
+    <string name="title_activity_user_reservation">UserReservationActivity</string>
+
+    <!--登录界面-->
+    <string name="login_account">请输入手机号码</string>
+    <string name="login_pwd">请输入密码</string>
+    <string name="login_commit">登录</string>
+    <string name="login_head">请先登录</string>
+    <string name="login_start_reg">没有账号？点击注册</string>
+
+    <!--注册界面-->
+    <string name="reg_account">请输入手机号码</string>
+    <string name="reg_pwd">请输入密码</string>
+    <string name="reg_comfirm_pwd">确认密码</string>
+    <string name="reg_head">注册</string>
+    <string name="reg_commit">注册</string>
+
+    <!--滑动菜单-->
+    <string name="setting">设置</string>
+    <string name="about_us">关于我们</string>
+    
+    <string name="choose_class">报名训练班</string>
+    <string name="title_activity_about_us">AboutUsActivity</string>
+    <string name="title_activity_coach_info">CoachInfoActivity</string>
+
+    <string name="loading">加载中...</string>
+    <string name="swipe_to_refresh">下拉刷新</string>
+    <string name="toolbar_title">校园教练</string>
+
+    <!--用户报名的训练班-->
+    <string name="user_class_title">我参加的训练班</string>
+    <string name="user_reservation_title">我提交的需求</string>
+</resources>

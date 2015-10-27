@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="com.entity">    
+    
+    <class name="ReservationReceive" table="reservationreceive"> 
+		<composite-id>
+			<key-property name="coachID" column="coachID"></key-property>
+			<key-property name="reservationID" column="reservationID"></key-property>
+		</composite-id>
+		<property name="coachName" column="coachName"></property> 
+    </class>
+    
+</hibernate-mapping>

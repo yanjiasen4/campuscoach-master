@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        
+<hibernate-mapping package="com.entity">    
+    
+    <class name="Coach" table="coach"> 
+    <id name="coachID" column="coachID">
+    </id>
+    <property name="phoneNumber" column="phoneNumber"></property>
+    <property name="learnerID" column="learnerID"></property>
+    <property name="realname" column="realname"></property> 
+    <property name="sportsName" column="sportsName"></property> 
+    <property name="stateFlag" column="stateFlag"></property>
+    <property name="avatar" column="avatar"></property>
+    <property name="introduction" column="introduction"></property>
+    </class>
+    
+</hibernate-mapping>
