@@ -82,12 +82,10 @@ public class ShowCoursesAction extends ActionSupport {
 		}
 		ActionContext actionContext = ActionContext.getContext();
         Map<String,Object> session = actionContext.getSession();
-        System.out.println(session.get("first_login"));
         if(session.containsKey("first_login")) {
      
         	int login = (Integer) session.get("first_login");
         	if(login==1) {
-        		System.out.println("!");
         		session.remove("first_login");
         		return "flogin";
         	}

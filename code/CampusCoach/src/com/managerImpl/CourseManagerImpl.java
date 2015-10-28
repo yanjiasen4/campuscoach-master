@@ -10,6 +10,7 @@ import java.util.List;
 
 
 
+
 import com.Message.Message;
 import com.dao.CoachDAO;
 import com.dao.CourseDAO;
@@ -89,7 +90,6 @@ public class CourseManagerImpl implements CourseManager{
 	}
 
 	public Boolean deleteCourse(int courseID) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -225,6 +225,15 @@ public class CourseManagerImpl implements CourseManager{
 		}
 		else {
 			return null;
+		}
+	}
+
+	public Boolean deleteCourseSignup(int learnerID, int courseID) {
+		if(courseSignUpDao.deleteCourseSignUp(courseID, learnerID)){
+			return true;
+		}
+		else {
+			return false;
 		}
 	}
 

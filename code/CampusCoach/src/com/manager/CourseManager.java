@@ -18,6 +18,7 @@ public interface CourseManager {
 			String time, String place, String introduction, int stateFlag);
 	public Boolean deleteCourse(int courseID);
 	public Boolean updateCourse(Course course);
+	public Boolean deleteCourseSignup(int learnerID, int courseID);
 	
 	//------------------------------------------------------------------------
 	public List<Course> getAllNowCourses();

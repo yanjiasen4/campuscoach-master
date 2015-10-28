@@ -56,6 +56,9 @@
 	<bean id="showCoachCourseAction" class="com.action.ShowCoachCoursesAction">
 		<property name="courseManager" ref="courseManager"></property>
 	</bean>
+	<bean id="dropCourseAction" class="com.action.DropCourseAction">
+		<property name="courseManager" ref="courseManager"></property>
+	</bean>
 	<bean id="uploadAvatarAction" class="com.action.UploadAvatarAction">
 		<property name="learnerManager" ref="learnerManager"></property>
 		<property name="uploadDir" value="/img"></property>
