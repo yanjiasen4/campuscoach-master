@@ -14,13 +14,13 @@
     
 
     <!-- Bootstrap core CSS -->
-    <link href="style/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles -->
-    <link href="style/css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 	
-	<script src="style/js/jquery-2.1.1.min.js"></script>
-	<script src="style/js/bootstrap.min.js"></script>
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
